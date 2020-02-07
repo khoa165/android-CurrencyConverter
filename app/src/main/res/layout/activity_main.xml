@@ -7,23 +7,57 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/appHeadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Easy converter"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/converterImage"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:contentDescription="@string/main_image_description"
         android:src="@drawable/converter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <EditText
+        android:id="@+id/moneyInput"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/converterImage"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="15dp"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:hint="Amount in dollars ($)" />
+
+    <Button
+        android:id="@+id/clickButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Convert!"
+        app:layout_constraintTop_toBottomOf="@id/moneyInput"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.85"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:onClick="convert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
